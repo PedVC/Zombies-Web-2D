@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zombies Web 2D</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="jogo"></canvas>
+
+  <div id="interface">
+    <div class="painel">
+      <span>Mapa: <strong id="mapaAtual">Instalação</strong></span>
+      <span>Ronda: <strong id="ronda">1</strong></span>
+      <span>Pontos: <strong id="pontos">0</strong></span>
+      <span>Kills: <strong id="kills">0</strong></span>
+      <span>Inimigos: <strong id="inimigosRestantes">0</strong></span>
+    </div>
+
+    <div class="painel">
+      <span>J1 Vida: <strong id="vida1">100</strong></span>
+      <span>Mun. J1: <strong id="municoes1">12</strong></span>
+      <span>Res. J1: <strong id="reserva1">60</strong></span>
+      <span>J2 Vida: <strong id="vida2">0</strong></span>
+      <span>Mun. J2: <strong id="municoes2">0</strong></span>
+      <span>Res. J2: <strong id="reserva2">0</strong></span>
+    </div>
+
+    <div class="painel">
+      <span><strong id="estadoPausa"></strong></span>
+    </div>
+  </div>
+
+  <section id="ecraInicial" class="overlay">
+    <div class="caixa caixa-grande">
+      <h1>Zombies Web v2.2</h1>
+      <p>Sobrevive por rondas, compra perks, melhora a arma e tenta sobreviver o máximo de rondas possível.</p>
+
+      <div class="grelha-menu">
+        <div class="cartao-menu">
+          <h2>Definições</h2>
+
+          <label for="numeroJogadores">Número de jogadores</label>
+          <select id="numeroJogadores">
+            <option value="1">1 jogador</option>
+            <option value="2">2 jogadores</option>
+          </select>
+
+          <label for="selectorMapa">Mapa</label>
+          <select id="selectorMapa">
+            <option value="instalacao">Instalação Abandonada</option>
+            <option value="ruas">Ruas em Ruínas</option>
+            <option value="laboratorio">Laboratório Subterrâneo</option>
+          </select>
+
+          <label for="modoCores">Modo visual</label>
+          <select id="modoCores">
+            <option value="altoContraste">Alto contraste</option>
+            <option value="protanopia">Daltonismo: protanopia</option>
+            <option value="deuteranopia">Daltonismo: deuteranopia</option>
+            <option value="tritanopia">Daltonismo: tritanopia</option>
+          </select>
+        </div>
+      </div>
+
+      <p class="teclas">
+        J1: WASD + rato · J2: setas + P disparar + O recarregar · E comprar/interagir · ESC ou Espaço pausa
+      </p>
+
+      <button id="botaoComecar" type="button" class="principal">Começar Jogo</button>
+    </div>
+  </section>
+
+  <section id="ecraPausa" class="overlay escondido">
+    <div class="caixa">
+      <h1>Jogo em Pausa</h1>
+      <p>Carrega em ESC, Espaço ou no botão para continuar.</p>
+      <button id="botaoContinuar" type="button">Continuar</button>
+      <button id="botaoSairMenu" type="button" class="secundario">Voltar ao Menu</button>
+    </div>
+  </section>
+
+  <section id="fimJogo" class="overlay escondido">
+    <div class="caixa">
+      <h1>Fim de Jogo</h1>
+      <p id="resultadoFinal"></p>
+      <button id="botaoReiniciar" type="button">Jogar Novamente</button>
+      <button id="botaoMenuFinal" type="button" class="secundario">Menu Principal</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
